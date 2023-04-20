@@ -5,6 +5,7 @@ Data engineer bootcamp
   - Database(pymysql)
   - API
 - Data Cleansing
+  - Spark
 - Basic Cloud
 - Data Pipeline Orchestration
 - Data Visualization
