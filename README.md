@@ -8,5 +8,6 @@ Data engineer bootcamp
   - Spark
 - Basic Cloud
 - Data Pipeline Orchestration
+- Data Warehouse
 - Data Visualization
 - Advance Data Engineering
