@@ -9,5 +9,6 @@ Data engineer bootcamp
 - Basic Cloud
 - Data Pipeline Orchestration
 - Data Warehouse
-- Data Visualization
-- Advance Data Engineering
+- Data Visualization Looker Studio
+  - Link: https://lookerstudio.google.com/reporting/0470f906-3f94-4b3f-b785-8b60d40283c3
+
