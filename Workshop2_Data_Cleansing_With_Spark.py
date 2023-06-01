@@ -228,9 +228,6 @@ dt_clean.show(10)
 """
 
 # วิธีที่ 1 ในการเช็ค Missing Value
-# ใช้เทคนิค List Comparehension - ทบทวนได้ใน Pre-course Python https://school.datath.com/courses/road-to-data-engineer-2/contents/6129b780564a8
-# เช่น [ print(i) for i in [1,2,3] ]
-
 # col = คำสั่ง Spark ในการเลือกคอลัมน์
 # sum = คำสั่ง Spark ในการคิดผลรวม
 from pyspark.sql.functions import col, sum
@@ -247,8 +244,6 @@ dt_clean.where( dt_clean.user_id.isNull() ).show()
 
 """#### ทางทีม Data Analyst แจ้งว่าอยากให้เราแทน user_id ที่เป็น NULL ด้วย 00000000 ไปเลย
 """
-
-# Answer here
 dt_clean_user_id = dt_clean.withColumn("UserUpdate", 
                                        when(dt_clean['user_id'].isNull(), '00000000').otherwise(dt_clean['user_id'])
                                        )
