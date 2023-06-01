@@ -83,16 +83,6 @@ dt.where(dt.price >= 1).show()
 # ข้อมูลที่เป็นตัวหนังสือ
 dt.where(dt.country == 'Canada').show()
 
-"""### Exercise 2: 
-1. การซื้อทั้งหมดที่เกิดขึ้นในเดือนเมษายน มีกี่แถว
-2. การซื้อทั้งหมดที่เกิดขึ้นในเดือนสิงหาคม มีกี่แถว
-"""
-
-# 1.
-dt.where(dt.timestamp.startswith("2021-04")).show()
-#2.
-dt.where(dt.timestamp.startswith("2021-08")).show()
-
 ## Graphical EDA
 
 import seaborn as sns
@@ -146,11 +136,6 @@ dt_clean.show()
 
 dt_clean.printSchema()
 
-"""## BONUS: ตัวอย่างการใช้ประโยชน์จากข้อมูล Datetime"""
-
-# นับยอด transaction ช่วงครึ่งเดือนแรก ของเดือนมิถุนายน
-dt_clean.where( (f.dayofmonth(dt_clean.timestamp) <= 15) & ( f.month(dt_clean.timestamp) == 6 ) ).count()
-
 """## Anomalies Check
 
 ใช้ Spark ตามหาสิ่งที่ผิดปกติในข้อมูล
@@ -168,11 +153,6 @@ dt_clean.select("Country").distinct().count()
 # sort = ทำให้ข้อมูลเรียงตามตัวอักษร อ่านง่ายขึ้น
 # show() ถ้าไม่ใส่ตัวเลขจะขึ้นมาแค่ 20 อัน และใส่ False เพื่อให้แสดงข้อมูลในคอลัมน์แบบเต็ม ๆ (หากไม่ใส่ คอลัมน์ที่ยาวจะถูกตัดตัวหนังสือ)
 dt_clean.select("Country").distinct().sort("Country").show(58, False )
-
-"""มาดูกันว่าประเทศที่ชื่อผิด มีข้อมูลหน้าตาเป็นอย่างไร
-
-Japane
-"""
 
 # เปลี่ยน ... เป็นชื่อประเทศที่คุณคิดว่าผิด
 dt_clean.where(dt_clean['Country'] == 'Japane').show()
